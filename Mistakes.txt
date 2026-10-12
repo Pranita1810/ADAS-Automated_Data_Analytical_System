@@ -1,0 +1,7 @@
+**** MISTAKES I HAVE MADE WHILE BUILDING THIS PROJECT *****
+
+1. Built 2 Instance of postgres!
+-  Here I imported postgres image, why? cuz GPT said to. so my code was not able to access actual database in my windows system it was trying to access that 
+   database from instance running.
+   
+   

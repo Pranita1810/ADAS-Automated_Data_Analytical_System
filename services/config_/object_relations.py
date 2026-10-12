@@ -3,6 +3,7 @@ from sqlalchemy import String, Integer, Float, Boolean, Date, create_engine
 from dotenv import load_dotenv
 import os
 from pathlib import Path
+from datetime import date
 
 _env_path = Path(__file__).resolve().parent / ".env"
 if _env_path.is_file():
@@ -17,7 +18,7 @@ class Base(DeclarativeBaseNoMeta):
 
 # main table
 class MainTable(Base):
-    __tablename__ = "Sales"
+    __tablename__ = "sales"
     transaction_id : Mapped[str] = mapped_column(String, primary_key= True)
     customer_id : Mapped[str] = mapped_column(String)
     category : Mapped[str] = mapped_column(String)
@@ -37,4 +38,5 @@ engine = create_engine(os.getenv("DATABASE_URL"))
 def getsession():
     with Session(engine) as session:
         yield session
+
 
