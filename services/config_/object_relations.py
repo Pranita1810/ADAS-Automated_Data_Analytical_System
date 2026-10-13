@@ -19,7 +19,7 @@ class Base(DeclarativeBaseNoMeta):
 # main table
 class MainTable(Base):
     __tablename__ = "sales"
-    transaction_id : Mapped[str] = mapped_column(String, primary_key= True)
+    transaction_id : Mapped[str] = mapped_colum n(String, primary_key= True)
     customer_id : Mapped[str] = mapped_column(String)
     category : Mapped[str] = mapped_column(String)
     item : Mapped[str] = mapped_column(String)
