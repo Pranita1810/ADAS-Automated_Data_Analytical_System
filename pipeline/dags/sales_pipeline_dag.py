@@ -39,9 +39,6 @@ def task_transform_data(**context):
     print("Starting Data Transformation Stage...")
     engine = TransEngine()
     df = engine.transform(drop_unrecoverable=True)
-    report = engine.get_data_quality_report()
-    print(f"Transformation complete. Rows: {len(df)}, Quality Report: {report}")
-    return report
 
 
 def task_backup_to_parquet(**context):
@@ -94,12 +91,11 @@ if AIRFLOW_AVAILABLE:
         dag_id="adas_sales_pipeline",
         default_args=default_args,
         description="Extracts, cleans, backs up to Parquet, and uploads sales data to SSMS",
-        schedule_interval="@daily",
+        schedule="@daily",
         start_date=datetime(2024, 1, 1),
         catchup=False,
         tags=["adas", "sales", "parquet", "ssms"],
     )
-
     t1_transform = PythonOperator(
         task_id="transform_data_task",
         python_callable=task_transform_data,

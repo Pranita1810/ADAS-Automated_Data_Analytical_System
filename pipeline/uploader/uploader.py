@@ -12,19 +12,18 @@ load_dotenv()
 
 
 def get_connection():
-    driver = os.getenv("MSSQL_DRIVER", "ODBC Driver 18 for SQL Server")
-    server = os.getenv("MSSQL_HOST", "localhost")
-    port = os.getenv("MSSQL_PORT", "1433")
-    database = os.getenv("MSSQL_DATABASE", "test")
-    user = os.getenv("MSSQL_USER", "")
-    password = os.getenv("MSSQL_PASSWORD", "")
-    trusted = os.getenv("MSSQL_TRUSTED_CONNECTION", "yes").lower() in ("yes", "true", "1")
+    driver = (os.getenv("MSSQL_DRIVER") or "ODBC Driver 18 for SQL Server").strip("'\"")
+    server = (os.getenv("MSSQL_HOST") or "localhost").strip("'\"")
+    port = (os.getenv("MSSQL_PORT") or "1433").strip("'\"")
+    database = (os.getenv("MSSQL_DATABASE") or "test").strip("'\"")
+    user = (os.getenv("MSSQL_USER") or "").strip("'\"")
+    password = (os.getenv("MSSQL_PASSWORD") or "").strip("'\"")
 
     conn_str = f"DRIVER={{{driver}}};SERVER={server},{port};DATABASE={database};TrustServerCertificate=yes;"
-    if trusted or not user:
-        conn_str += "Trusted_Connection=yes;"
-    else:
+    if user:
         conn_str += f"UID={user};PWD={password};"
+    else:
+        conn_str += "Trusted_Connection=yes;"
     return pyodbc.connect(conn_str)
 
 

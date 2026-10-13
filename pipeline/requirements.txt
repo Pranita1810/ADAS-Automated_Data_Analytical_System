@@ -3,3 +3,4 @@ requests>=2.31.0
 python-dotenv>=1.0.0
 pyodbc>=5.0.0
 pymssql>=2.2.0
+apache-airflow>=2.8.0
