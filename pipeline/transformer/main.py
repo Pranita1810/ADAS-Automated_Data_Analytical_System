@@ -29,8 +29,12 @@ except ImportError:
     sys.path.append(str(Path(__file__).resolve().parents[1]))
     from src_.ingestion import get_data
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
-logger = logging.getLogger(__name__)
+try:
+    from mahgaurd import get_logger
+    logger = get_logger("ADAS.Pipeline.Transformer")
+except ImportError:
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+    logger = logging.getLogger(__name__)
 
 
 class TransEngine:

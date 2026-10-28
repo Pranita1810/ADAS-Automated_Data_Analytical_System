@@ -1,0 +1,73 @@
+2026-10-17 15:51:34 | INFO     | Test | Hello from Mahgaurd
+2026-10-17 15:53:31 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: C:\Users\PANRIT\ALL\Pranit Main\PROJECTS\ADAS-Automated_Data_Analytical_System\services\AI_\reports
+2026-10-17 15:53:31 | INFO     | ADAS.AI_Service | AI query received: 'What is our total revenue?' (Evaluating against 11971 records)
+2026-10-17 15:53:40 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: C:\Users\PANRIT\ALL\Pranit Main\PROJECTS\ADAS-Automated_Data_Analytical_System\services\AI_\reports
+2026-10-17 15:53:40 | INFO     | ADAS.AI_Service | AI query received: 'What is our total revenue?' (Evaluating against 11971 records)
+2026-10-17 15:53:40 | INFO     | ADAS.AI_Service | AI query received: 'Generate report' (Evaluating against 11971 records)
+2026-10-17 15:53:41 | INFO     | ADAS.AI_Service | Generated executive HTML report at C:\Users\PANRIT\ALL\Pranit Main\PROJECTS\ADAS-Automated_Data_Analytical_System\services\AI_\reports\executive_report_20261017_155341.html (21,839 bytes)
+2026-10-17 15:57:50 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: C:\Users\PANRIT\ALL\Pranit Main\PROJECTS\ADAS-Automated_Data_Analytical_System\services\AI_\reports
+2026-10-17 15:57:50 | INFO     | ADAS.AnalyticalEngine | Database connection unavailable or skipped, falling back to Parquet backups.
+2026-10-17 15:57:50 | INFO     | ADAS.AnalyticalEngine | Loading latest backup parquet: sales_backup_20261015_035733.parquet
+2026-10-17 15:57:50 | INFO     | ADAS.AnalyticalEngine | AnalyticalEngine initialized successfully with 11971 records.
+2026-10-17 15:57:50 | INFO     | ADAS.AI_Service | AI query received: 'What is our total revenue?' (Evaluating against 11971 records)
+2026-10-17 15:57:50 | INFO     | ADAS.AI_Service | AI query received: 'What are our top products and 80/20 pareto breakdown?' (Evaluating against 11971 records)
+2026-10-17 15:57:50 | INFO     | ADAS.AI_Service | AI query received: 'Show me our customer RFM cohorts' (Evaluating against 11971 records)
+2026-10-17 15:57:50 | INFO     | ADAS.AI_Service | AI query received: 'Which products are at critical stockout risk?' (Evaluating against 11971 records)
+2026-10-17 15:57:50 | INFO     | ADAS.AI_Service | AI query received: 'What decisions are logged?' (Evaluating against 11971 records)
+2026-10-17 15:57:50 | INFO     | ADAS.AI_Service | AI query received: 'Generate an executive HTML report' (Evaluating against 11971 records)
+2026-10-17 15:57:50 | INFO     | ADAS.AI_Service | Generated executive HTML report at C:\Users\PANRIT\ALL\Pranit Main\PROJECTS\ADAS-Automated_Data_Analytical_System\services\AI_\reports\executive_report_20261017_155750.html (21,821 bytes)
+2026-10-17 15:58:45 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: C:\Users\PANRIT\ALL\Pranit Main\PROJECTS\ADAS-Automated_Data_Analytical_System\services\AI_\reports
+2026-10-17 15:58:45 | INFO     | ADAS.AnalyticalEngine | Database connection unavailable or skipped, falling back to Parquet backups.
+2026-10-17 15:58:45 | INFO     | ADAS.AnalyticalEngine | Loading latest backup parquet: sales_backup_20261015_035733.parquet
+2026-10-17 15:58:45 | INFO     | ADAS.AnalyticalEngine | AnalyticalEngine initialized successfully with 11971 records.
+2026-10-17 15:58:45 | INFO     | ADAS.AI_Service | AI query received: 'What is our total revenue?' (Evaluating against 11971 records)
+2026-10-17 15:58:45 | INFO     | ADAS.AI_Service | AI query received: 'What are our top products and 80/20 pareto breakdown?' (Evaluating against 11971 records)
+2026-10-17 15:58:45 | INFO     | ADAS.AI_Service | AI query received: 'Show me our customer RFM cohorts' (Evaluating against 11971 records)
+2026-10-17 15:58:45 | INFO     | ADAS.AI_Service | AI query received: 'Which products are at critical stockout risk?' (Evaluating against 11971 records)
+2026-10-17 15:58:45 | INFO     | ADAS.AI_Service | AI query received: 'What decisions are logged?' (Evaluating against 11971 records)
+2026-10-17 15:58:45 | INFO     | ADAS.AI_Service | AI query received: 'Generate an executive HTML report' (Evaluating against 11971 records)
+2026-10-17 15:58:46 | INFO     | ADAS.AI_Service | Generated executive HTML report at C:\Users\PANRIT\ALL\Pranit Main\PROJECTS\ADAS-Automated_Data_Analytical_System\services\AI_\reports\executive_report_20261017_155846.html (21,893 bytes)
+2026-10-17 16:04:29 | INFO     | ADAS.AnalyticalEngine | Database connection unavailable or skipped, falling back to Parquet backups.
+2026-10-17 16:04:29 | INFO     | ADAS.AnalyticalEngine | Loading latest backup parquet: sales_backup_20261015_035733.parquet
+2026-10-17 16:04:29 | INFO     | ADAS.AnalyticalEngine | AnalyticalEngine initialized successfully with 11971 records.
+2026-10-17 16:04:29 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: C:\Users\PANRIT\ALL\Pranit Main\PROJECTS\ADAS-Automated_Data_Analytical_System\services\AI_\reports
+2026-10-17 10:40:50 | INFO     | ADAS.AnalyticalEngine | Loaded 12575 records from database warehouse at host.docker.internal:5432/datawarehouse_sales.
+2026-10-17 10:40:50 | INFO     | ADAS.AnalyticalEngine | AnalyticalEngine initialized successfully with 12575 records.
+2026-10-17 10:40:50 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: /app/service/AI_/reports
+2026-10-17 10:40:50 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: /app/service/AI_/reports
+2026-10-17 10:40:51 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: /app/services/AI_/reports
+2026-10-17 10:41:00 | INFO     | ADAS.AnalyticalEngine | Loaded 12575 records from database warehouse at host.docker.internal:5432/datawarehouse_sales.
+2026-10-17 10:41:00 | INFO     | ADAS.AnalyticalEngine | AnalyticalEngine initialized successfully with 12575 records.
+2026-10-17 10:41:22 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: /app/service/AI_/reports
+2026-10-17 10:41:24 | INFO     | ADAS.AnalyticalEngine | Loaded 12575 records from database warehouse at host.docker.internal:5432/datawarehouse_sales.
+2026-10-17 10:41:24 | INFO     | ADAS.AnalyticalEngine | AnalyticalEngine initialized successfully with 12575 records.
+2026-10-17 10:41:24 | INFO     | ADAS.AI_Service | AI query received: 'What is our revenue?' (Evaluating against 12575 records)
+2026-10-17 10:44:46 | INFO     | ADAS.AI_Service | AI query received: 'hi' (Evaluating against 12575 records)
+2026-10-17 10:45:02 | INFO     | ADAS.AI_Service | AI query received: 'don't tell me answers bro' (Evaluating against 12575 records)
+2026-10-17 10:49:42 | INFO     | ADAS.AI_LLM | FreeLLMClient initialized (Provider: none, Key configured: False)
+2026-10-17 10:49:42 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: /app/service/AI_/reports (LLM configured: False)
+2026-10-17 10:49:51 | INFO     | ADAS.AI_LLM | FreeLLMClient initialized (Provider: none, Key configured: False)
+2026-10-17 10:49:51 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: /app/service/AI_/reports (LLM configured: False)
+2026-10-17 10:49:51 | INFO     | ADAS.AI_LLM | FreeLLMClient initialized (Provider: gemini, Key configured: True)
+2026-10-17 10:49:51 | INFO     | ADAS.AI_Service | Updated LLM provider to 'gemini' (Key set: True)
+2026-10-17 10:53:16 | INFO     | ADAS.AI_LLM | FreeLLMClient initialized (Provider: none, Key configured: False)
+2026-10-17 10:53:16 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: /app/service/AI_/reports (LLM configured: False)
+2026-10-17 10:53:16 | INFO     | ADAS.AI_LLM | FreeLLMClient initialized (Provider: none, Key configured: False)
+2026-10-17 10:53:16 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: /app/services/AI_/reports (LLM configured: False)
+2026-10-17 10:56:35 | INFO     | ADAS.AnalyticalEngine | Loaded 12575 records from database warehouse at host.docker.internal:5432/datawarehouse_sales.
+2026-10-17 10:56:35 | INFO     | ADAS.AnalyticalEngine | AnalyticalEngine initialized successfully with 12575 records.
+2026-10-17 10:56:35 | INFO     | ADAS.AI_LLM | FreeLLMClient initialized (Provider: none, Key configured: False)
+2026-10-17 10:56:35 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: /app/service/AI_/reports (LLM configured: False)
+2026-10-17 10:56:48 | INFO     | ADAS.AI_LLM | FreeLLMClient initialized (Provider: groq, Key configured: True)
+2026-10-17 10:56:48 | INFO     | ADAS.AI_Service | Updated LLM provider to 'groq' (Key set: True)
+2026-10-17 10:56:54 | INFO     | ADAS.AI_Service | AI query received: 'Generate executive HTML report' (Evaluating against 12575 records)
+2026-10-17 10:56:55 | INFO     | ADAS.AI_Service | Generated executive HTML report at /app/service/AI_/reports/executive_report_20261017_105655.html (21,844 bytes)
+2026-10-17 10:58:29 | INFO     | ADAS.AI_Service | AI query received: 'hi' (Evaluating against 12575 records)
+2026-10-18 10:38:46 | INFO     | ADAS.AnalyticalEngine | Loaded 12575 records from database warehouse at host.docker.internal:5432/datawarehouse_sales.
+2026-10-18 10:38:47 | INFO     | ADAS.AnalyticalEngine | AnalyticalEngine initialized successfully with 12575 records.
+2026-10-18 10:38:47 | INFO     | ADAS.AI_LLM | FreeLLMClient initialized (Provider: none, Key configured: False)
+2026-10-18 10:38:47 | INFO     | ADAS.AI_Service | AIService initialized with reports directory: /app/service/AI_/reports (LLM configured: False)
+2026-10-18 10:39:13 | INFO     | ADAS.AI_Service | AI query received: 'Generate executive HTML report' (Evaluating against 12575 records)
+2026-10-18 10:39:13 | INFO     | ADAS.AI_Service | Generated executive HTML report at /app/service/AI_/reports/executive_report_20261018_103913.html (22,031 bytes)
+2026-10-18 10:39:25 | INFO     | ADAS.AI_Service | AI query received: 'Generate executive HTML report' (Evaluating against 12575 records)
+2026-10-18 10:39:26 | INFO     | ADAS.AI_Service | Generated executive HTML report at /app/service/AI_/reports/executive_report_20261018_103925.html (22,044 bytes)

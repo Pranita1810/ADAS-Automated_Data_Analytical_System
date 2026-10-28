@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADAS Executive Analytical & Strategic Decision Report</title>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --accent-blue: #3b82f6;
+            --accent-teal: #06b6d4;
+            --accent-emerald: #10b981;
+            --accent-rose: #ef4444;
+            --accent-amber: #f59e0b;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 30px 20px;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Header Banner */
+        .header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--border-color);
+            border-left: 6px solid var(--accent-blue);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+        .header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .print-btn {
+            background-color: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .print-btn:hover {
+            background-color: #2563eb;
+        }
+        /* KPI Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+        .kpi-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+        .kpi-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .kpi-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        /* Sections */
+        .section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 22px;
+            margin-bottom: 24px;
+        }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            color: #f1f5f9;
+        }
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.92rem;
+        }
+        th {
+            background-color: rgba(255, 255, 255, 0.03);
+            color: var(--text-secondary);
+            font-weight: 600;
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+        }
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+        .badge-pos {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .badge-neg {
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        .badge-warning {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        .badge-a {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        /* RFM Grid */
+        .rfm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+        }
+        .rfm-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+        }
+        .rfm-title {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        .rfm-count {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-top: 4px;
+        }
+        .rfm-pct {
+            font-size: 0.85rem;
+            color: var(--accent-teal);
+            font-weight: normal;
+        }
+        /* Insights & Decisions */
+        .insight-box {
+            background: rgba(59, 130, 246, 0.06);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+        }
+        .insight-badge {
+            font-size: 0.75rem;
+            color: var(--accent-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .insight-headline {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #f1f5f9;
+            margin-bottom: 6px;
+        }
+        .insight-action {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+        .decision-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        .decision-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .decision-id {
+            background-color: rgba(255, 255, 255, 0.08);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .decision-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #ffffff;
+            flex-grow: 1;
+        }
+        .decision-body {
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+        .decision-meta {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        /* Print Stylesheet */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+                padding: 0;
+            }
+            .print-btn {
+                display: none;
+            }
+            .section, .kpi-card, .header {
+                background-color: #ffffff !important;
+                border: 1px solid #ccc !important;
+                color: #000000 !important;
+                box-shadow: none !important;
+            }
+            th, td, .kpi-label, .kpi-value, .rfm-title, .rfm-count, .insight-headline, .decision-title {
+                color: #000000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <h1>⚡ ADAS Executive Analytical & Strategic Decision Report</h1>
+                <p>Generated by <strong>ADAS AI Decision Service</strong> on October 17, 2026 - 10:56:55</p>
+            </div>
+            <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+        </div>
+
+        <!-- KPI Scorecards -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">Total Revenue</div>
+                <div class="kpi-value">$1,552,071.00 <span class='badge badge-neg'>-47.3% MoM</span></div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Total Orders</div>
+                <div class="kpi-value">12,575</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Average Order Value</div>
+                <div class="kpi-value">$123.43</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Units Sold</div>
+                <div class="kpi-value">66,276</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Unique Customers</div>
+                <div class="kpi-value">25</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Discount Penetration</div>
+                <div class="kpi-value">33.6%</div>
+            </div>
+        </div>
+
+        <!-- Prescriptive Action Alerts -->
+        <div class="section">
+            <div class="section-title">💡 Strategic Prescriptive Alerts & Opportunities</div>
+            
+            <div class='insight-box'>
+                <div class='insight-badge'>Pricing & Discounts | High</div>
+                <div class='insight-headline'>Heavy Discounting in Butchers (51.4% of orders)</div>
+                <div class='insight-action'>💡 <strong>Action:</strong> Review discount eligibility for Butchers. A 5% discount reduction could recover estimated $10,406.0 in net margin.</div>
+            </div>
+            
+            <div class='insight-box'>
+                <div class='insight-badge'>Inventory & Restock | Medium</div>
+                <div class='insight-headline'>Top 104 products (50.0% of catalog) drive 80% of revenue</div>
+                <div class='insight-action'>💡 <strong>Action:</strong> Ensure supply chain priority & guaranteed in-stock SLA for these core Class A revenue drivers.</div>
+            </div>
+            
+            <div class='insight-box'>
+                <div class='insight-badge'>Channel Strategy | Informational</div>
+                <div class='insight-headline'>Online channel delivers higher basket size ($124.55 vs $122.27)</div>
+                <div class='insight-action'>💡 <strong>Action:</strong> Deploy cross-sell product bundles in the lower-AOV channel to close the $2.28 basket gap.</div>
+            </div>
+            
+        </div>
+
+        <!-- Category Performance Table -->
+        <div class="section">
+            <div class="section-title">📊 Product Category Contribution</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Revenue</th>
+                        <th>Revenue Share</th>
+                        <th>Units Sold</th>
+                        <th>AOV</th>
+                        <th>Discounted Orders %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td><strong>Butchers</strong></td>
+                <td>$208,118.00</td>
+                <td>13.4%</td>
+                <td>8,206</td>
+                <td>$132.73</td>
+                <td>51.4%</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Electric household essentials</strong></td>
+                <td>$203,813.50</td>
+                <td>13.1%</td>
+                <td>8,309</td>
+                <td>$128.10</td>
+                <td>49.7%</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Beverages</strong></td>
+                <td>$197,047.50</td>
+                <td>12.7%</td>
+                <td>8,358</td>
+                <td>$125.75</td>
+                <td>51.3%</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Furniture</strong></td>
+                <td>$195,310.00</td>
+                <td>12.6%</td>
+                <td>8,462</td>
+                <td>$122.76</td>
+                <td>52.4%</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Food</strong></td>
+                <td>$194,812.00</td>
+                <td>12.6%</td>
+                <td>8,387</td>
+                <td>$122.68</td>
+                <td>48.2%</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Computers and electric accessories</strong></td>
+                <td>$190,692.50</td>
+                <td>12.3%</td>
+                <td>8,272</td>
+                <td>$122.40</td>
+                <td>49.5%</td>
+            </tr>
+            
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pareto 80/20 Core Drivers -->
+        <div class="section">
+            <div class="section-title">🎯 Pareto (80/20) Class A Revenue Drivers</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classification</th>
+                        <th>Product Item</th>
+                        <th>Category</th>
+                        <th>Revenue</th>
+                        <th>Revenue %</th>
+                        <th>Cumulative %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td><span class='badge badge-a'>Class A</span></td>
+                <td><strong>Item_25_FUR</strong></td>
+                <td>Furniture</td>
+                <td>$25,256.00</td>
+                <td>1.6%</td>
+                <td>1.6%</td>
+            </tr>
+            
+            <tr>
+                <td><span class='badge badge-a'>Class A</span></td>
+                <td><strong>Item_25_EHE</strong></td>
+                <td>Electric household essentials</td>
+                <td>$23,083.00</td>
+                <td>1.5%</td>
+                <td>3.1%</td>
+            </tr>
+            
+            <tr>
+                <td><span class='badge badge-a'>Class A</span></td>
+                <td><strong>Item_25_BUT</strong></td>
+                <td>Butchers</td>
+                <td>$21,894.00</td>
+                <td>1.4%</td>
+                <td>4.5%</td>
+            </tr>
+            
+            <tr>
+                <td><span class='badge badge-a'>Class A</span></td>
+                <td><strong>Item_24_FUR</strong></td>
+                <td>Furniture</td>
+                <td>$21,172.00</td>
+                <td>1.4%</td>
+                <td>5.9%</td>
+            </tr>
+            
+            <tr>
+                <td><span class='badge badge-a'>Class A</span></td>
+                <td><strong>Item_25_FOOD</strong></td>
+                <td>Food</td>
+                <td>$20,541.00</td>
+                <td>1.3%</td>
+                <td>7.2%</td>
+            </tr>
+            
+            <tr>
+                <td><span class='badge badge-a'>Class A</span></td>
+                <td><strong>Item_22_BUT</strong></td>
+                <td>Butchers</td>
+                <td>$19,710.00</td>
+                <td>1.3%</td>
+                <td>8.5%</td>
+            </tr>
+            
+            <tr>
+                <td><span class='badge badge-a'>Class A</span></td>
+                <td><strong>Item_23_BUT</strong></td>
+                <td>Butchers</td>
+                <td>$19,114.00</td>
+                <td>1.2%</td>
+                <td>9.7%</td>
+            </tr>
+            
+            <tr>
+                <td><span class='badge badge-a'>Class A</span></td>
+                <td><strong>Item_20_BUT</strong></td>
+                <td>Butchers</td>
+                <td>$18,860.50</td>
+                <td>1.2%</td>
+                <td>10.9%</td>
+            </tr>
+            
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Inventory Stockout Risks -->
+        <div class="section">
+            <div class="section-title">⚠️ Critical Inventory Velocity & Restock Alerts</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Item</th>
+                        <th>Category</th>
+                        <th>Sales Velocity</th>
+                        <th>Days of Stock</th>
+                        <th>Risk Status</th>
+                        <th>Recommended Reorder</th>
+                        <th>Capital Required</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td><strong>Item_25_MILK</strong></td>
+                <td>Milk Products</td>
+                <td>0.0 /day</td>
+                <td>0.0 days</td>
+                <td><span class='badge badge-neg'>CRITICAL (Stockout <7d)</span></td>
+                <td><strong>+1 units</strong></td>
+                <td>$41.00</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Item_24_CEA</strong></td>
+                <td>Computers and electric accessories</td>
+                <td>0.0 /day</td>
+                <td>0.0 days</td>
+                <td><span class='badge badge-neg'>CRITICAL (Stockout <7d)</span></td>
+                <td><strong>+1 units</strong></td>
+                <td>$39.50</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Item_12_MILK</strong></td>
+                <td>Milk Products</td>
+                <td>0.1 /day</td>
+                <td>0.0 days</td>
+                <td><span class='badge badge-neg'>CRITICAL (Stockout <7d)</span></td>
+                <td><strong>+3 units</strong></td>
+                <td>$64.50</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Item_13_BEV</strong></td>
+                <td>Beverages</td>
+                <td>0.0 /day</td>
+                <td>0.0 days</td>
+                <td><span class='badge badge-neg'>CRITICAL (Stockout <7d)</span></td>
+                <td><strong>+1 units</strong></td>
+                <td>$23.00</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Item_21_PAT</strong></td>
+                <td>Patisserie</td>
+                <td>0.0 /day</td>
+                <td>0.0 days</td>
+                <td><span class='badge badge-neg'>CRITICAL (Stockout <7d)</span></td>
+                <td><strong>+1 units</strong></td>
+                <td>$35.00</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Item_1_EHE</strong></td>
+                <td>Electric household essentials</td>
+                <td>0.2 /day</td>
+                <td>4.8 days</td>
+                <td><span class='badge badge-neg'>CRITICAL (Stockout <7d)</span></td>
+                <td><strong>+7 units</strong></td>
+                <td>$35.00</td>
+            </tr>
+            
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Customer RFM Segments -->
+        <div class="section">
+            <div class="section-title">👥 Customer RFM Cohort Segmentation</div>
+            <div class="rfm-grid">
+                
+            <div class='rfm-card'>
+                <div class='rfm-title'>Recent / Potential</div>
+                <div class='rfm-count'>7 <span class='rfm-pct'>(28.0%)</span></div>
+            </div>
+            
+            <div class='rfm-card'>
+                <div class='rfm-title'>Loyal Customers</div>
+                <div class='rfm-count'>7 <span class='rfm-pct'>(28.0%)</span></div>
+            </div>
+            
+            <div class='rfm-card'>
+                <div class='rfm-title'>Standard Customers</div>
+                <div class='rfm-count'>5 <span class='rfm-pct'>(20.0%)</span></div>
+            </div>
+            
+            <div class='rfm-card'>
+                <div class='rfm-title'>Champions</div>
+                <div class='rfm-count'>3 <span class='rfm-pct'>(12.0%)</span></div>
+            </div>
+            
+            <div class='rfm-card'>
+                <div class='rfm-title'>Lost / Inactive</div>
+                <div class='rfm-count'>3 <span class='rfm-pct'>(12.0%)</span></div>
+            </div>
+            
+            </div>
+        </div>
+
+        <!-- Strategic Decisions Log -->
+        <div class="section">
+            <div class="section-title">✍️ Active Executive Strategic Decisions</div>
+            <p style='color: #64748b; font-style: italic;'>No strategic decisions logged yet.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>ADAS Automated Data Analytical System &bull; Confidential Executive Document &bull; Mahgaurd Verified</p>
+        </div>
+    </div>
+</body>
+</html>

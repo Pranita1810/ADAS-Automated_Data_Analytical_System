@@ -7,6 +7,10 @@ services:
       - "8000:8000"
     env_file:
       - ./services/config_/.env
+    volumes:
+      - ./services:/app/services
+      - ./service:/app/service
+      - ./mahgaurd:/app/mahgaurd
     restart: unless-stopped
 
   pipeline:
@@ -24,6 +28,29 @@ services:
     volumes:
       - ./pipeline/backups/parquet_backups:/app/pipeline/backups/parquet_backups
       - ./pipeline/dags:/app/pipeline/dags
+      - ./mahgaurd:/app/mahgaurd
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/dockerfile
+    ports:
+      - "8501:8501"
+    env_file:
+      - ./frontend/.env
+    depends_on:
+      - api
+    volumes:
+      - ./engines:/app/engines
+      - ./pipeline/backups/parquet_backups:/app/pipeline/backups/parquet_backups
+      - ./frontend:/app/frontend
+      - ./services:/app/services
+      - ./service:/app/service
+      - ./mahgaurd:/app/mahgaurd
+      - ./mahgurd:/app/mahgurd
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: unless-stopped
